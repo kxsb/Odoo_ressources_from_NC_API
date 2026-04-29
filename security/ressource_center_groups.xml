@@ -1,0 +1,11 @@
+<odoo>
+    <record id="module_category_ressource_center" model="ir.module.category">
+        <field name="name">Centre de ressources</field>
+        <field name="sequence">80</field>
+    </record>
+
+    <record id="group_ressource_center_manager" model="res.groups">
+        <field name="name">Gestionnaire des droits</field>
+        <field name="category_id" ref="module_category_ressource_center"/>
+    </record>
+</odoo>

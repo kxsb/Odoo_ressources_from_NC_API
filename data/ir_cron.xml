@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_ressources_from_nc_api_daily_sync" model="ir.cron">
+            <field name="name">Ressources NC API - Daily Sync</field>
+            <field name="model_id" ref="base.model_ir_config_parameter"/>
+            <field name="state">code</field>
+            <field name="code">env['ressources.nc.sync'].sudo().run_daily_sync()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + relativedelta(days=1)).strftime('%Y-%m-%d 00:00:00')"/>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

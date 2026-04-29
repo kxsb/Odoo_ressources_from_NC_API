@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_ressources_nc_folder_list" model="ir.ui.view">
+        <field name="name">ressources.nc.folder.list</field>
+        <field name="model">ressources.nc.folder</field>
+        <field name="arch" type="xml">
+            <list string="Dossiers du centre de ressources" editable="bottom">
+                <field name="relative_path"/>
+                <field name="name"/>
+                <field name="parent_path"/>
+                <field name="file_count"/>
+                <field name="visibility"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_ressources_nc_folder_form" model="ir.ui.view">
+        <field name="name">ressources.nc.folder.form</field>
+        <field name="model">ressources.nc.folder</field>
+        <field name="arch" type="xml">
+            <form string="Dossier du centre de ressources">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="relative_path"/>
+                        <field name="parent_path"/>
+                        <field name="file_count"/>
+                        <field name="visibility"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ressources_nc_folder" model="ir.actions.act_window">
+        <field name="name">Droits des dossiers</field>
+        <field name="res_model">ressources.nc.folder</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_ressources_nc_root"
+              name="Centre de ressources"
+              sequence="80"/>
+
+    <menuitem id="menu_ressources_nc_folder"
+              name="Droits des dossiers"
+              parent="menu_ressources_nc_root"
+              action="action_ressources_nc_folder"
+              sequence="10"/>
+</odoo>
