@@ -1,4 +1,4 @@
-console.log("🔥 resource_center.js chargé - version test 2026-04-29-frontend");
+//console.log("🔥 resource_center.js chargé - version test 2026-04-29-frontend");
 window.RESSOURCE_DEBUG_LOADED = true;
 
 (function () {
